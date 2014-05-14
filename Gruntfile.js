@@ -60,7 +60,7 @@ module.exports = function (grunt) {
         },
         release: {
             options: {
-                npm: true
+                npm: false
             }
         }
     });
