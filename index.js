@@ -1,3 +1,1 @@
-#!/usr/bin/env node
-
-require("./server").start();
+module.exports = require("./lib/swaggy");
