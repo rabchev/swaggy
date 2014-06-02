@@ -25,13 +25,14 @@ module.exports = function (grunt) {
             options: {
                 timeout: 3000,
                 ignoreLeaks: false,
+                globals: ["Swagger"],
                 reporter: "spec"
             },
             all: {
                 src: ["./test/*_test.js"]
             },
             swaggy: {
-                src: ["./test/swaggy.js"]
+                src: ["./test/swaggy_test.js"]
             }
         },
         shell: {
