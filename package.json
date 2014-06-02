@@ -16,7 +16,8 @@
         "swagger-node-express": "*",
         "swagger-ui": "*",
         "async": "*",
-        "lodash": "*"
+        "lodash": "*",
+        "walk": "*"
     },
     "devDependencies": {
         "mocha": "*",
