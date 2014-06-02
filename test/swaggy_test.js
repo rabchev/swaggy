@@ -2,39 +2,32 @@
 
 var request         = require("supertest"),
     chai            = require("chai"),
-    server          = require("../server"),
+    app             = require("./app"),
     expect          = chai.expect,
-    app;
+    agent           = request.agent(app);
 
 function test(done, setReq, examine) {
-    var req = setReq(request(app));
+    var req = setReq(agent);
     req.end(function (err, res) {
         if (err) {
             return done(err);
         }
         if (examine) {
-            try {
-                examine(res.body);
-            } catch (err) {
-                return done(err);
+            var data;
+            if (res.type === "text/html" && res.text) {
+                data = res.text;
+            } else {
+                data = res.body;
             }
+            examine(data);
+            done();
+        } else {
+            done();
         }
-        done();
     });
 }
 
 describe("public site", function () {
-
-    before(function (done) {
-        server.init(function (err, res) {
-            if (err) {
-                return done(err);
-            }
-
-            app = res;
-            done();
-        });
-    });
 
     it("get index", function (done) {
         test(done, function (req) {
@@ -44,7 +37,21 @@ describe("public site", function () {
                 .expect("Content-Type", /html/)
                 .expect(200);
         }, function (data) {
-            expect(data).to.be.ok;
+            expect(data).to.equal("Hello");
         });
     });
+
+    it("get docs", function (done) {
+        test(done, function (req) {
+            return req
+                .get("/api/docs")
+                .set("Accept", "text/html")
+                .expect("Content-Type", /html/)
+                .expect(200);
+        }, function (data) {
+            console.log("foo: " + data);
+            //expect(data).to.equal("Hello");
+        });
+    });
+
 });

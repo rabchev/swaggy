@@ -12,14 +12,13 @@
         "url": "https://github.com/rabchev/swaggy.git"
     },
     "dependencies": {
-        "express": "*",
         "swagger-node-express": "*",
         "swagger-ui": "*",
-        "async": "*",
         "lodash": "*",
         "walk": "*"
     },
     "devDependencies": {
+        "express": "*",
         "mocha": "*",
         "chai": "*",
         "sinon-chai": "*",
