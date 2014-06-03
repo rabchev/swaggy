@@ -85,6 +85,7 @@
     "globals"       : {         // additional predefined global variables
         "it": true,
         "describe": true,
-        "before": true
+        "before": true,
+        "Swagger": true
     }
 }

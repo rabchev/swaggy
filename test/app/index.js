@@ -1,12 +1,17 @@
 "use strict";
 
-var app = require("express")(),
-    swaggy = require("../../lib/swaggy");
+var app         = require("express")(),
+    bodyParser  = require("body-parser"),
+    swaggy      = require("../../lib/swaggy");
 
-swaggy(app, { controllersDir: __dirname + "/rest-api" });
+exports.init = function (done) {
+    app.use(bodyParser());
 
-app.get("/", function (req, res) {
-    res.send("Hello");
-});
+    app.get("/", function (req, res) {
+        res.send("Hello");
+    });
 
-module.exports = app;
+    swaggy(app, { controllersDir: __dirname + "/rest-api" }, function (err) {
+        done(err, app);
+    });
+};
