@@ -217,4 +217,30 @@ describe("swaggy", function () {
         });
     });
 
+    it("get accounts v1", function (done) {
+        test(done, function (req) {
+            return req
+            .get("/api/v1/accounts")
+            .set("Accept", "application/json")
+            .expect("Content-Type", "application/json; charset=utf-8")
+            .expect(200);
+        }, function (data) {
+            expect(data).to.have.length.of(2);
+            expect(data[0].surname).to.equal("Alden");
+        });
+    });
+
+    it("get accounts v2", function (done) {
+        test(done, function (req) {
+            return req
+            .get("/api/v2/accounts")
+            .set("Accept", "application/json")
+            .expect("Content-Type", "application/json; charset=utf-8")
+            .expect(200);
+        }, function (data) {
+            expect(data).to.have.length.of(2);
+            expect(data[0].name).to.equal("Gabrielle Alden");
+        });
+    });
+
 });

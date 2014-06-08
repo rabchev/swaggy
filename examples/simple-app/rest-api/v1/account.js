@@ -1,5 +1,6 @@
 "use strict";
 
+// Simulate some data
 var accounts    = [
     {
         _id: 0,
@@ -19,6 +20,7 @@ var accounts    = [
     }
 ];
 
+// http://json-schema.org/draft-04/schema#
 exports.models = {
     Account: {
         id: "Account",
