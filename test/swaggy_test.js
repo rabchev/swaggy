@@ -60,7 +60,7 @@ describe("swaggy", function () {
                 .expect("Content-Type", /html/)
                 .expect(200);
         }, function (data) {
-            expect(data).to.contain("url: \"http://localhost:3000/api/api-docs\",");
+            expect(data).to.contain("url: \"/api/api-docs\",");
         });
     });
 
@@ -72,7 +72,7 @@ describe("swaggy", function () {
             .expect("Content-Type", /html/)
             .expect(200);
         }, function (data) {
-            expect(data).to.contain("url: \"http://localhost:3000/api/api-docs\",");
+            expect(data).to.contain("url: \"/api/api-docs\",");
         });
     });
 

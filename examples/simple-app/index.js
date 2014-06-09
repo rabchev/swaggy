@@ -1,11 +1,15 @@
 "use strict";
 
+if (process.cwd() !== __dirname) {
+    process.chdir(__dirname);
+}
+
 var express     = require("express"),
     bodyParser  = require("body-parser"),
     swaggy      = require("../../lib/swaggy"),
     app         = express();
 
-// We need body-parser for convenience, so we don't have to JSON parse every request individually.
+// We need body-parser for convenience.
 app.use(bodyParser());
 
 app.get("/", function(req, res){
