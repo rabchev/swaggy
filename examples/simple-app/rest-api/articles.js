@@ -8,10 +8,11 @@ var _           = require("lodash"),
 exports.models = {
     Article: {
         id: "Article",
+        required: ["_id"],
         description: "An entity of content.",
         properties: {
             _id: {
-                type: "number"
+                type: "integer"
             },
             title: {
                 type: "string"

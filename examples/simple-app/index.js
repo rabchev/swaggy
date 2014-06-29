@@ -10,7 +10,7 @@ var express     = require("express"),
     app         = express();
 
 // We need body-parser for convenience.
-app.use(bodyParser());
+app.use(bodyParser.json());
 
 app.get("/", function(req, res){
     res.send("Hello World");
@@ -21,8 +21,8 @@ swaggy(app, function (err) {
         return console.log(err);
     }
 
-    app.listen(3000, function() {
-        console.log("Listening on port 3000 ...");
-        console.log("Go to http://localhost:3000/api/docs");
+    app.listen(3001, function() {
+        console.log("Listening on port 3001 ...");
+        console.log("Go to http://localhost:3001/api/docs");
     });
 });

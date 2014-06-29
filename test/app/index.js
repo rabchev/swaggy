@@ -5,7 +5,7 @@ var app         = require("express")(),
     swaggy      = require("../../lib/swaggy");
 
 exports.init = function (done) {
-    app.use(bodyParser());
+    app.use(bodyParser.json());
 
     app.get("/", function (req, res) {
         res.send("Hello");

@@ -12,7 +12,7 @@
         "url": "https://github.com/rabchev/swaggy.git"
     },
     "dependencies": {
-        "swagger-node-express": "*",
+        "swagger-node-express": ">=2.1",
         "swagger-ui": "*",
         "lodash": "*",
         "walk": "*"
