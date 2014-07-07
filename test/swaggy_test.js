@@ -105,7 +105,7 @@ describe("swaggy", function () {
             .expect("Content-Type", "application/json; charset=utf-8")
             .expect(200);
         }, function (data) {
-            expect(data.apiVersion).to.equal("0.1");
+            expect(data.apiVersion).to.equal("1.0");
         });
     });
 
