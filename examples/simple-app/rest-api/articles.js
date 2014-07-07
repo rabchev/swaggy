@@ -32,7 +32,7 @@ exports.addArticle = {
         description: "Articles Operations",
         path: "/articles",
         parameters : [
-            Swagger.bodyParam("article", "The article.", "object")
+            Swagger.bodyParam("article", "The article.", "Article")
         ],
         notes: "Adds new articles.",
         summary: "Add new articles.",
@@ -86,7 +86,10 @@ exports.updateArticle = {
     spec: {
         description: "Articles Operations",
         path: "/articles/{id}",
-        parameters : [Swagger.pathParam("id", "The ID of the article to update", "number")],
+        parameters : [
+            Swagger.pathParam("id", "The ID of the article to update", "number"),
+            Swagger.bodyParam("article", "The article to update", "Article")
+        ],
         notes: "Updates the article with the specified ID.",
         summary: "Update article by ID.",
         method: "PUT",

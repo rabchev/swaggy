@@ -1,5 +1,7 @@
 "use strict";
 
+// Swaggy assumes the current working directory is the project root.
+// By default it will look for ./rest-api/ directory to scan .js files for endpoints.
 if (process.cwd() !== __dirname) {
     process.chdir(__dirname);
 }

@@ -2,21 +2,23 @@
 
 // Simulate some data
 var accounts    = [
-        {
-            _id: 0,
-            title: "Ms",
-            name: "Gabrielle Alden",
-            age: 33,
-            gender: "female"
-        },
-        {
-            _id: 0,
-            title: "Mr",
-            name: "Harry Pearson",
-            age: 44,
-            gender: "male"
-        }
-    ];
+    {
+        _id: 0,
+        prefix: "Ms",
+        givenName: "Gabrielle",
+        surname: "Alden",
+        age: 33,
+        gender: "female"
+    },
+    {
+        _id: 0,
+        prefix: "Mr",
+        givenName: "Harry",
+        surname: "Pearson",
+        age: 44,
+        gender: "male"
+    }
+];
 
 // http://json-schema.org/draft-04/schema#
 exports.models = {
@@ -24,11 +26,12 @@ exports.models = {
         id: "Account",
         description: "User account information.",
         properties: {
-            _id     : { type: "number" },
-            title   : { type: "string" },
-            name    : { type: "string" },
-            age     : { type: "number" },
-            gender  : { type: "number" }
+            _id         : { type: "number" },
+            prefix      : { type: "string" },
+            givenName   : { type: "string" },
+            surname     : { type: "string" },
+            age         : { type: "number" },
+            gender      : { type: "number" }
         }
     }
 };
@@ -36,7 +39,7 @@ exports.models = {
 exports.getAccounts = {
     spec: {
         description: "Accounts Operations",
-        path: "/v2/accounts",
+        path: "/accounts",
         notes: "Returns all user accounts.",
         summary: "Get all accounts.",
         method: "GET",
