@@ -1,59 +1,62 @@
 {
-    "name": "swaggy",
-    "description": "An automation extension for swagger-node-express module.",
-    "version": "1.0.0",
-    "main": "./lib/swaggy",
-    "author": "Boyan Rabchev <boyan@rabchev.com>",
-    "contributors": [
-        { "name": "Boyan Rabchev", "email": "boyan@rabchev.com" }
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/rabchev/swaggy.git"
-    },
-    "dependencies": {
-        "swagger-node-express": ">=2.1",
-        "swagger-ui": "*",
-        "lodash": "*",
-        "walk": "*"
-    },
-    "devDependencies": {
-        "express": "*",
-        "body-parser": "*",
-        "mocha": "*",
-        "chai": "*",
-        "sinon-chai": "*",
-        "supertest": "*",
-        "grunt": "*",
-        "grunt-release": "*",
-        "grunt-shell": "*",
-        "grunt-simple-mocha": "*",
-        "grunt-node-inspector": "*",
-        "grunt-concurrent": "*"
-    },
-    "scripts": {
-        "test": "grunt test"
-    },
-    "keywords": [
-        "swagger",
-        "express",
-        "services",
-        "node",
-        "rest",
-        "restful",
-        "spec",
-        "automation",
-        "opinionated"
-    ],
-    "bugs": {
-        "email": "boyan@rabchev.com",
-        "url": "https://github.com/rabchev/swaggy/issues"
-    },
-    "license": {
-        "type": "MIT",
-        "url": "http://github.com/rabchev/swaggy/blob/master/LICENSE"
-    },
-    "engines": {
-        "node": "0.10.x"
+  "name": "swaggy",
+  "description": "An automation extension for swagger-node-express module.",
+  "version": "1.0.1",
+  "main": "./lib/swaggy",
+  "author": "Boyan Rabchev <boyan@rabchev.com>",
+  "contributors": [
+    {
+      "name": "Boyan Rabchev",
+      "email": "boyan@rabchev.com"
     }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rabchev/swaggy.git"
+  },
+  "dependencies": {
+    "swagger-node-express": ">=2.1",
+    "swagger-ui": "*",
+    "lodash": "*",
+    "walk": "*"
+  },
+  "devDependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "mocha": "*",
+    "chai": "*",
+    "sinon-chai": "*",
+    "supertest": "*",
+    "grunt": "*",
+    "grunt-release": "*",
+    "grunt-shell": "*",
+    "grunt-simple-mocha": "*",
+    "grunt-node-inspector": "*",
+    "grunt-concurrent": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "keywords": [
+    "swagger",
+    "express",
+    "services",
+    "node",
+    "rest",
+    "restful",
+    "spec",
+    "automation",
+    "opinionated"
+  ],
+  "bugs": {
+    "email": "boyan@rabchev.com",
+    "url": "https://github.com/rabchev/swaggy/issues"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "http://github.com/rabchev/swaggy/blob/master/LICENSE"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
 }
