@@ -87,11 +87,26 @@ There are working examples at: [https://github.com/rabchev/swaggy/tree/master/ex
 API Reference
 -------------
 
-** swaggy(app, opts, callback); **
+There is only one method.
+
+**swaggy(app, opts, callback);**
 
  - **app** (required) - Express application instance.
  - **opts** (optional) - Configuration options. See the table below for all supported options.
  - **callback** (optional) - Called upon initialization completion. The callback has two parameters. The first parameter will contain an Error object if an error occurred, or null otherwise. While, the second parameter will be the Swagger instance that was attached to the app if it was successfully initialized.
+
+**Options:**
+
+| Key           | Type      | Description                                                                   |
+|---------------|-----------|-------------------------------------------------------------------------------|
+| root          | string    | The base path for the REST API. Defaults to "/api".                           |
+| controllersDir| string    | The root directory for API controllers, modules exposing REST endpoints. Defaults to `process.cwd() + "/rest-api"`. |
+| apiVersion    | string    | The semantic version of the API. Defaults to 1.0.                             |
+| docsPath      | string    | The URL at which the Swagger user interface will be accessible. Defaults to "/docs". NOTE: this path is relative to the `root` option. |
+| resourcePath  | string    | The URL of the API discovery service. Defaults to "/api-docs".                |
+| format        | string    | Specifies whether file extensions (.json) should be assigned to REST endpoints. Defaults to empty string, extesions will not be used. |
+| sufix         | string    | Defines the actual extension. Defaults to empty stirng.                       |
+
 
 License
 -------
