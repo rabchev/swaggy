@@ -87,9 +87,7 @@ There are working examples at: [https://github.com/rabchev/swaggy/tree/master/ex
 API Reference
 -------------
 
-There is only one method.
-
-**swaggy(app, opts, callback);**
+### swaggy(app, opts, callback);
 
  - **app** (required) - Express application instance.
  - **opts** (optional) - Configuration options. See the table below for all supported options.
@@ -107,6 +105,25 @@ There is only one method.
 | format        | string    | Specifies whether file extensions (.json) should be assigned to REST endpoints. Defaults to empty string, extesions will not be used. |
 | sufix         | string    | Defines the actual extension. Defaults to empty stirng.                       |
 
+### Controllers
+
+Controllers are modules that export one Swagger spec object for every endpoint. Additionally they can export *models* property and *init* method.
+
+#### models property (optional)
+
+ JSON schema object as described in [json-schema.org](http://json-schema.org/latest/json-schema-core.html). Swaggy automatically registers the described data objects.
+
+NOTE: the names of the described objects must be unique within a Swagger instance. Later objects will override previous ones.
+
+#### init method (optional)
+
+If present, it will be called immediately before registering the exported endpoints. The method is useful if the controller needs to do some asynchronous operations during initialization, such as reading configurations.
+
+**init(swagger, opts, callback)**
+
+ - swagger (required) - The current Swagger instance.
+ - opts (required) - The options that ware passed to Swaggy.
+ - callback (required) - Must be called. The method accepts only on argument – **err**.
 
 License
 -------
