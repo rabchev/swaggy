@@ -1,7 +1,7 @@
 {
   "name": "swaggy",
   "description": "An automation extension for swagger-node-express module.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "./lib/swaggy",
   "author": "Boyan Rabchev <boyan@rabchev.com>",
   "contributors": [
