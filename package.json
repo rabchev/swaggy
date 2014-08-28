@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "swagger-node-express": ">=2.1",
-    "swagger-ui": "*",
+    "swagger-ui": "2.0.17",
     "lodash": "*",
     "walk": "*"
   },
